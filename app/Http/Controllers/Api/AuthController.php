@@ -77,6 +77,11 @@ class AuthController extends Controller
         ], 409);
     }
 
+    public function userProfile()
+    {
+        return response()->json(auth()->user());
+    }
+
     public function logout()
     {
         $hapusToken = JWTAuth::invalidate(JWTAuth::getToken());
